@@ -1,12 +1,12 @@
-class FancyShoppingListJS:
+class FancyShoppingListDL:
     def __init__(self, food, amount):
         self.food = food
         self.amount = amount
-        self._standard_prices = self._price_list()
-        self._standard_price_per_pound = self._get_standard_price()
-        self._calculated_price = self.calculate_cost()
+        self._standard_prices = self._price_listDL()
+        self._standard_price_per_pound = self._get_standard_priceDL()
+        self._calculated_price = self.calculate_costDL()
 
-    def _price_list(self):
+    def _price_listDL(self):
         prices = {
             'Dry Cured Iberian Ham': 177.80,
             'Wagyu Steaks': 450.00,
@@ -19,13 +19,13 @@ class FancyShoppingListJS:
         }
         return prices
 
-    def _get_standard_price(self):
+    def _get_standard_priceDL(self):
         if self.food in self._standard_prices:
             return self._standard_prices[self.food]
         else:
             return 0.00
 
-    def calculate_cost(self):
+    def calculate_costDL(self):
         return self.amount * self._standard_price_per_pound
 
     def __str__(self):

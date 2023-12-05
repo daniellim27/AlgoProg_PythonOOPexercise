@@ -1,7 +1,7 @@
-from FancyShoppingListJS import FancyShoppingListJS
+from FancyShoppingListDL import FancyShoppingListDL
 
 
-def create_shopping_list():
+def create_shopping_listDL():
     shopping_list = []
     num_items = int(input("How many items will you order today? "))
     while num_items < 1:
@@ -15,26 +15,26 @@ def create_shopping_list():
         while amount <= 0:
             print("Amount of pounds must be greater than 0.")
             amount = float(input("Enter amount of pounds: "))
-        shopping_list.append(FancyShoppingListJS(food, amount))
+        shopping_list.append(FancyShoppingListDL(food, amount))
 
     return shopping_list
 
 
-def display_shopping_list(shopping_list):
+def display_shopping_listDL(shopping_list):
     for item in shopping_list:
         print(item)
         print()
 
 
-def calculate_total_cost(shopping_list):
-    total_cost = sum(item.calculate_cost() for item in shopping_list)
+def calculate_total_costDL(shopping_list):
+    total_cost = sum(item.calculate_costDL() for item in shopping_list)
     return total_cost
 
 def main():
-    shopping_list = create_shopping_list()
+    shopping_list = create_shopping_listDL()
     print("\nHere's a summary of the items purchased:")
-    display_shopping_list(shopping_list)
-    total_cost = calculate_total_cost(shopping_list)
+    display_shopping_listDL(shopping_list)
+    total_cost = calculate_total_costDL(shopping_list)
     print(f"Total cost: ${total_cost:.2f}")
 
 
